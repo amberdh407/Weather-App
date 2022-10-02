@@ -210,3 +210,7 @@ h2 {
   background-color: rgba(80, 155, 240, 0.398);
   transition: all 200ms ease-in-out;
 }
+.git-hub-link {
+  display: block;
+  margin: 0 auto;
+}
