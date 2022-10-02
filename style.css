@@ -1,4 +1,212 @@
-h1 {
+body {
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/037/796/original/Weather-app-image-2.jpg?1655669365);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.weather-app {
+  background: rgba(0, 0, 0, 0.205);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+  margin: 0 auto;
+  max-width: 600px;
+  max-height: 900px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 50px;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.search-bar:hover,
+.search-bar:active,
+.search-bar:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+.card-body {
+  background: none;
+  border-radius: 20px;
+}
+.search-icon {
+  color: white;
+  padding-left: 20px;
+}
+.search-card {
+  --bs-card-inner-border-radius: none;
+  --bs-card-bg: rgba(0, 0, 0, 0.344);
+  position: relative;
+  width: 400px;
+  border-radius: 20px;
+  border: none;
+
+  word-wrap: break-word;
+  --bs-card-spacer-y: none;
+  --bs-card-spacer-x: none;
+  padding: 5px;
+}
+.search-bar {
+  width: 100%;
+  font-size: 14px;
+  background-color: transparent;
+  border: none;
+}
+.search-columns {
+  width: auto;
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+}
+.search-bar:hover {
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.137);
+  border-radius: 16px;
+}
+.search-button,
+.current-button {
+  background-color: rgba(125, 190, 244, 0.387);
+  border-radius: 16px;
   text-align: center;
-  color: blue;
+  font-size: 12px;
+  color: white;
+}
+.search-button:hover,
+.current-button:hover {
+  background-color: rgba(136, 180, 215, 0.36);
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  border: 1px solid rgba(17, 17, 17, 0.356);
+}
+h1 {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px;
+  width: 200px;
+  border-radius: 15px;
+  background: rgba(17, 17, 17, 0.356);
+}
+.location-icon {
+  color: rgb(228, 35, 35);
+}
+.main-view {
+  text-align: center;
+  margin: 10px 30px 10px 30px;
+}
+.main-icon {
+  font-size: 70px;
+  padding-top: 10px;
+}
+.weather-description {
+  font-size: 15px;
+  position: relative;
+  top: -10px;
+}
+.main-temp {
+  font-size: 65px;
+  padding-top: 20px;
+  padding-left: 24px;
+}
+.units {
+  font-size: 11px;
+  position: relative;
+  top: -30px;
+  left: 0px;
+}
+.main-details {
+  font-size: 14px;
+  margin-top: 30px;
+  padding-top: 10px;
+}
+
+.search-cities-row {
+  padding: 15px;
+  margin: 0 auto;
+  margin-top: 0px;
+  border-radius: 20px;
+  width: 500px;
+  background: rgba(17, 17, 17, 0.356);
+}
+.washington-link,
+.la-link,
+.ny-link {
+  background-color: rgba(112, 183, 241, 0.438);
+  border-radius: 12px;
+  text-decoration: none;
+  padding: 5px;
+  color: White;
+  text-align: center;
+  display: block;
+  width: 130px;
+  font-size: 12px;
+}
+.washington-link:hover,
+.la-link:hover,
+.ny-link:hover {
+  background-color: rgba(89, 146, 192, 0.438);
+  cursor: pointer;
+  color: white;
+  transition: all 200ms ease-in-out;
+}
+h2 {
+  padding: 4px;
+  text-align: center;
+  font-size: 14px;
+  font-stretch: 150%;
+  margin: 0 auto;
+  width: 200px;
+  border-radius: 8px;
+  background: rgba(17, 17, 17, 0.178);
+}
+.card-today,
+.card-sat,
+.card-sun,
+.card-mon,
+.card-tue {
+  text-align: center;
+  padding: 5px;
+  border-radius: 15px;
+  margin: 0 auto;
+  height: 125px;
+}
+.card-title {
+  font-size: 14px;
+}
+.card-date,
+.card-weather,
+.card-temp {
+  font-size: 11px;
+}
+.card-icon {
+  font-size: 16px;
+}
+.weather-cards {
+  border-radius: 20px;
+  width: 500px;
+  padding: 20px 30px;
+  margin: 0 auto;
+  margin-top: 10px;
+  background: rgba(17, 17, 17, 0.356);
+}
+.card-today,
+.card-sat,
+.card-sun,
+.card-mon,
+.card-tue {
+  background-color: rgba(87, 121, 172, 0.356);
+  border: 1px solid rgba(17, 17, 17, 0.356);
+}
+.card-today:hover,
+.card-sat:hover,
+.card-sun:hover,
+.card-mon:hover,
+.card-tue:hover {
+  background-color: rgba(80, 155, 240, 0.398);
+  transition: all 200ms ease-in-out;
 }
