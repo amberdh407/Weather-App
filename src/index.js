@@ -83,10 +83,9 @@ function showWeatherDescription(response) {
     response.value.weather.description;
   displayWeatherCondition(showWeatherDescription);
 }
-let iconElement = document
-  .querySelector(".large-icon")
-  .setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+let iconElement = document.querySelector("#large-icon");
+iconElement.setAttribute(
+  "src",
+  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+);
 iconElement.setAttribute("alt", response.data.weather[0].description);
