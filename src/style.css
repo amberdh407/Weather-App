@@ -42,11 +42,6 @@ body {
   width: 300px;
   border-radius: 20px;
   border: none;
-
-  word-wrap: break-word;
-  --bs-card-spacer-y: none;
-  --bs-card-spacer-x: none;
-  padding: 5px;
 }
 .search-bar {
   width: 90%;
