@@ -68,7 +68,6 @@ body {
 }
 .search-button,
 .current-button {
-  background-color: rgba(125, 190, 244, 0.387);
   border-radius: 16px;
   text-align: center;
   font-size: 12px;
