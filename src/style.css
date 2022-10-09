@@ -49,10 +49,7 @@ body {
   background-color: transparent;
   border: none;
 }
-.search-columns {
-  width: auto;
-  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
-}
+
 .search-bar:hover {
   transition: all 200ms ease-in-out;
   cursor: pointer;
