@@ -39,7 +39,7 @@ body {
   --bs-card-inner-border-radius: none;
   --bs-card-bg: rgba(0, 0, 0, 0.344);
   position: relative;
-  width: 420px;
+  width: 250px;
   border-radius: 20px;
   border: none;
 
