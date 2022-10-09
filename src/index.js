@@ -93,6 +93,6 @@ iconElement.setAttribute("alt", response.data.weather[0].description);
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   let celsiusTemperature = 9 / 5 + 32;
-  let temperatureElement = document.querySelector("#temperature");
+  let temperatureElement = document.querySelector("#current-temperature");
   temperatureElement.innerHTML = celsiusTemperature;
 }
