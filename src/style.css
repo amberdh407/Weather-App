@@ -73,7 +73,8 @@ body {
   text-align: center;
   font-size: 12px;
   color: white;
-  margin-left: 10px;
+  margin-left: 5px;
+  background-color: none;
 }
 .search-button:hover,
 .current-button:hover {
