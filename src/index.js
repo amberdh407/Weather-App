@@ -83,7 +83,7 @@ function showWeatherDescription(response) {
     response.value.weather.description;
   displayWeatherCondition(showWeatherDescription);
 }
-let iconElement = document.querySelector("#main-weather-icon");
+let iconElement = document.querySelector(".large-weather-icon");
 iconElement.setAttribute(
   "src",
   `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
