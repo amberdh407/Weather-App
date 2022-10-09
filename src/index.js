@@ -96,3 +96,5 @@ function displayCelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#current-temperature");
   temperatureElement.innerHTML = celsiusTemperature;
 }
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
