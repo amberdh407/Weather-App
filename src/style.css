@@ -49,10 +49,11 @@ body {
   padding: 5px;
 }
 .search-bar {
-  width: 80%;
+  width: 90%;
   font-size: 14px;
   background-color: transparent;
   border: none;
+  margin: 10px;
 }
 .search-columns {
   width: auto;
