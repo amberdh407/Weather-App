@@ -90,15 +90,16 @@ iconElement.setAttribute(
 );
 iconElement.setAttribute("alt", response.data.weather[0].description);
 
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let celsiusTemperature = (fahrenheitTemperature * 5) / 9 + 32;
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
