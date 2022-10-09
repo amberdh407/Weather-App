@@ -94,5 +94,5 @@ function displayCelsiusTemperature(event) {
   event.preventDefault();
   let celsiusTemperature = 9 / 5 + 32;
   let temperatureElement = document.querySelector("#curent-temperature");
-  temperatureElement.innerHTML = celsiumTemperature;
+  temperatureElement.innerHTML = celsiusTemperature;
 }
