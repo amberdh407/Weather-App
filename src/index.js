@@ -74,7 +74,6 @@ function showTemp(response) {
   console.log(mainMinTemp, mainMaxTemp);
   displayWeatherCondition(showTemp);
 }
-searchCity("Charlotte, NC");
 
 function showWeatherDescription(response) {
   let weatherDescription = document.querySelector("#description");
@@ -82,6 +81,7 @@ function showWeatherDescription(response) {
   document.querySelector("#description").innerHTML =
     response.value.weather.description;
   displayWeatherCondition(showWeatherDescription);
+  fahrenheitTemperature = response.data.main.temp;
 }
 let iconElement = document.querySelector("#large-weather-icon");
 iconElement.setAttribute(
@@ -92,9 +92,18 @@ iconElement.setAttribute("alt", response.data.weather[0].description);
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
-  let celsiusTemperature = 9 / 5 + 32;
+  let celsiusTemperature = (fahrenheitTemperature * 5) / 9 + 32;
   let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = celsiusTemperature;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+searchCity("Charlotte, NC");
