@@ -11,20 +11,18 @@ let currentTime = document.querySelector("#current-time");
 currentTime.innerHTML = `${time}`;
 
 function displayWeatherCondition(response) {
-  document.querySelector("#current-city-display").innerHTML =
-    response.data.name;
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  let cityElement = (document.querySelector("#current-city-display").innerHTML =
+    response.data.name);
+  let temperatureElement = (document.querySelector(
+    "#current-temperature"
+  ).innerHTML = Math.round(response.data.main.temp));
 
-  document.querySelector("#max-temp").innerHTML = Math.round(
-    response.data.main.temp_max
-  );
-  document.querySelector("#min-temp").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
-  document.querySelector("#description").innerHTML =
-    response.data.weather.main.description;
+  let maxTempElement = (document.querySelector("#max-temp").innerHTML =
+    Math.round(response.data.main.temp_max));
+  let minTempElement = (document.querySelector("#min-temp").innerHTML =
+    Math.round(response.data.main.temp_min));
+  let descriptionElement = (document.querySelector("#description").innerHTML =
+    response.data.weather[0].description);
 }
 function searchCity(city) {
   let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
