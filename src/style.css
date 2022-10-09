@@ -107,7 +107,7 @@ h1 {
   font-size: 15px;
   position: relative;
   top: -10px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .main-temp {
   font-size: 65px;
