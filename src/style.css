@@ -72,7 +72,7 @@ body {
   align-items: inline;
   font-size: 12px;
   text-align: center;
-  margin: inline;
+  margin: 0, auto;
   text-decoration: none;
   color: white;
   margin-left: 5px;
