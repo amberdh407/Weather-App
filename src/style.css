@@ -70,14 +70,13 @@ body {
 .current-button {
   border-radius: 16px;
   align-items: center;
-  font-size: 12px;
+  font-size: 11px;
+  padding: 8px;
   text-align: center;
   text-decoration: none;
   color: white;
-  margin: 0px;
   background-color: rgba(112, 183, 241, 0.438);
   border: none;
-  left: 40px;
 }
 .search-button:hover,
 .current-button:hover {
