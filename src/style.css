@@ -72,10 +72,9 @@ body {
   align-items: inline;
   font-size: 12px;
   text-align: center;
-  margin: 0, auto;
   text-decoration: none;
   color: white;
-  margin-left: 5px;
+  margin-left: -20px;
   background-color: rgba(112, 183, 241, 0.438);
   border: none;
 }
