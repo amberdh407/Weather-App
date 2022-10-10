@@ -11,21 +11,20 @@ let currentTime = document.querySelector("#current-time");
 currentTime.innerHTML = `${time}`;
 
 function displayWeatherCondition(response) {
-  document.querySelector("#current-city-display").innerHTML =
-    response.data.name;
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#max-temp").innerHTML = Math.round(
-    response.data.main.temp_max
-  );
-  document.querySelector("#min-temp").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].description;
+  let cityElement = (document.querySelector("#current-city-display").innerHTML =
+    response.data.name);
+  let temperatureElement = (document.querySelector(
+    "#current-temperature"
+  ).innerHTML = Math.round(response.data.main.temp));
+  let maxTempElement = (document.querySelector("#max-temp").innerHTML =
+    Math.round(response.data.main.temp_max));
+  let minTempElement = (document.querySelector("#min-temp").innerHTML =
+    Math.round(response.data.main.temp_min));
+  let weatherDescriptionElement = (document.querySelector(
+    "#description"
+  ).innerHTML = response.data.weather[0].description);
 
-  let iconElement = document.querySelector("#large-weather-icon");
+  let iconElement = document.querySelector("#large-icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -103,8 +102,7 @@ function displayCelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#current-temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-let celsiusTemperature = null;
-
+let celsiusTemperature = response.data.main.temp;
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
