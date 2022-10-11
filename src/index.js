@@ -11,18 +11,19 @@ let currentTime = document.querySelector("#current-time");
 currentTime.innerHTML = `${time}`;
 
 function displayWeatherCondition(response) {
-  let cityElement = (document.querySelector("#current-city-display").innerHTML =
-    response.data.name);
-  let temperatureElement = (document.querySelector(
-    "#current-temperature"
-  ).innerHTML = Math.round(response.data.main.temp));
-  let maxTempElement = (document.querySelector("#max-temp").innerHTML =
-    Math.round(response.data.main.temp_max));
-  let minTempElement = (document.querySelector("#min-temp").innerHTML =
-    Math.round(response.data.main.temp_min));
-  let weatherDescriptionElement = (document.querySelector(
-    "#description"
-  ).innerHTML = response.data.weather[0].description);
+  document.querySelector("#current-city-display").innerHTML =
+    response.data.name;
+  document.querySelector("#current-temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#max-temp").innerHTML = Math.round(
+    response.data.main.temp_max
+  );
+  document.querySelector("#min-temp").innerHTML = Math.round(
+    response.data.main.temp_min
+  );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
 
   let iconElement = document.querySelector("#large-icon");
   iconElement.setAttribute(
@@ -30,10 +31,11 @@ function displayWeatherCondition(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  celsiusTemperature = response.data.main.temp;
 }
 function searchCity(city) {
   let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 function submitSearch(event) {
@@ -53,7 +55,7 @@ function getPosition(position) {
   console.log(position.coords.latitude);
   console.log(position.coords.longitude);
   let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
@@ -93,8 +95,8 @@ function showWeatherDescription(response) {
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 function displayCelsiusTemperature(event) {
@@ -102,11 +104,11 @@ function displayCelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#current-temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-let celsiusTemperature = response.data.main.temp;
+let celsiusTemperature = null;
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-searchCity("Charlotte, NC");
+searchCity("Charlotte");
